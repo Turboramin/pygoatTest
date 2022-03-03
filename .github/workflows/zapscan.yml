@@ -36,7 +36,7 @@ jobs:
         uses: nev7n/wait_for_response@v1
         with:
          url: 'http://127.0.0.1:8000'
-         responseCode: 200
+         responseCode: 302
          timeout: 60000
          interval: 500
      
