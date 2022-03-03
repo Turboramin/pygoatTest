@@ -25,6 +25,7 @@ jobs:
         run: |
          python ./pygoat/manage.py migrate
       - name: run development server on localhost
+        run: |
          python ./pygoat/manage.py runserver
      
   OWASPZap:
