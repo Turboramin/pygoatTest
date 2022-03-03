@@ -28,13 +28,24 @@ jobs:
         run: |
          python ./pygoat/manage.py runserver
      
+  WaitForResponse:
+  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: nev7n/wait_for_response@v1
+      - name: Wait for response server
+        with:
+          url: 'http://127.0.0.1:8000'
+          responseCode: 200
+          timeout: 2000
+          interval: 500
+     
   OWASPZap:
   
-#    needs: build
+    needs: WaitForResponse
     runs-on: ubuntu-latest
     steps:
       - name: ZAP Scan
         uses: zaproxy/action-full-scan@v0.3.0
         with:
           target: 'http://127.0.0.1:8000'
-          cmd_options: '-T 1'
