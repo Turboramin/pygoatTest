@@ -37,7 +37,7 @@ jobs:
         with:
          url: 'http://127.0.0.1:8000'
          responseCode: 200
-         timeout: 2000
+         timeout: 60000
          interval: 500
      
   OWASPZap:
