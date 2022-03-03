@@ -25,11 +25,11 @@ jobs:
           
       - name: Apply migrations
         run: |
-         python ./pygoat/manage.py migrate
+         python3 ./pygoat/manage.py migrate
          
       - name: run development server on localhost
         run: |
-         python ./pygoat/manage.py runserver&
+         python3 ./pygoat/manage.py runserver&
          
       - name: Wait for response server
         uses: nev7n/wait_for_response@v1
