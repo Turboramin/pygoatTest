@@ -32,13 +32,13 @@ jobs:
   
     runs-on: ubuntu-latest
     steps:
-      - uses: nev7n/wait_for_response@v1
       - name: Wait for response server
+        uses: nev7n/wait_for_response@v1
         with:
-          url: 'http://127.0.0.1:8000'
-          responseCode: 200
-          timeout: 2000
-          interval: 500
+         url: 'http://127.0.0.1:8000'
+         responseCode: 200
+         timeout: 2000
+         interval: 500
      
   OWASPZap:
   
